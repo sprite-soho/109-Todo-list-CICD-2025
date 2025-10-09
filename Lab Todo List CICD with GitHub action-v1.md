@@ -1380,16 +1380,50 @@ start htmlcov/index.html  # Windows
 ```
 
 ## แนบรูปผลการทดลองการทดสอบระบบ
-```plaintext
-# แนบรูปผลการทดลองที่นี่
+![alt text](image.png)
 
-``` 
 ## คำถามการทดลอง
 ให้จับคู่ Code ส่วนของการทดสอบ กับ Code การทำงาน มาอย่างน้อย 3 ฟังก์ชัน พร้อมอธิบายการทำงานของแต่ละกรณี
-```plaintext
-# ตอบคำถามที่นี่
+```bash
 
+1. โค้ดฝั่งทดสอบ (Test Code)
+ 
+def test_root_endpoint(self, client):
+    """Test root endpoint returns API info"""
+    response = client.get('/')
+    assert response.status_code == 200
+    data = response.get_json()
+    assert 'message' in data
+    assert 'version' in data
+    assert 'endpoints' in data
 
+2. โค้ดฝั่งแอปพลิเคชัน (Application Code) ที่คาดหวัง
+โค้ดนี้ควรจะอยู่ในไฟล์ที่จัดการ Routes ของ Flask เช่น app/routes.py
+from flask import Blueprint, jsonify
+
+main_bp = Blueprint('main', __name__)
+
+@main_bp.route('/')
+def index():
+    """แสดงข้อมูลพื้นฐานของ API"""
+    api_info = {
+        'message': 'Welcome to the Todo API',
+        'version': '1.0',
+        'endpoints': ['/api/todos', '/api/health']
+    }
+    return jsonify(api_info), 200
+```
+
+```json
+1. client.get('/'): โค้ดทดสอบใช้ client ซึ่งเป็นเครื่องมือจำลองการเรียกใช้งานเว็บเบราว์เซอร์ ส่งคำขอ (Request) แบบ GET ไปยัง Endpoint หลัก (/) ของแอปพลิเคชัน
+
+2. @main_bp.route('/'): แอปพลิเคชันฝั่งเซิร์ฟเวอร์ เมื่อได้รับการร้องขอที่ Path / จะเรียกใช้ฟังก์ชัน index()
+
+3. return jsonify(api_info), 200: ฟังก์ชัน index() สร้าง Dictionary ที่มีข้อมูล API แล้วแปลงเป็นรูปแบบ JSON และส่งกลับไปเป็นการตอบสนอง (Response) พร้อมกับสถานะ 200 OK
+
+4. assert response.status_code == 200: โค้ดทดสอบตรวจสอบว่าสถานะการตอบสนองที่ได้รับกลับมาคือ 200 จริงหรือไม่
+
+5. assert 'message' in data: โค้ดทดสอบตรวจสอบเพิ่มเติมว่าข้อมูล JSON ที่ได้รับกลับมานั้น มี Key ชื่อ message, version, และ endpoints ครบถ้วนตามที่คาดไว้
 ```
 
 
