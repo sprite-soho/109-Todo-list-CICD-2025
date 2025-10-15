@@ -1762,11 +1762,12 @@ https://flask-todo-app.onrender.com
 - ถ้าชื่อซ้ำกัน Render จะเพิ่มตัวเลขต่อท้าย เช่น `flask-todo-app-1`
 
 **เพิ่ม RENDER_DEPLOY_HOOK_URL และ RENDER_APP_URL บน GitHub Repository**
-**ทำการ push ไปที่ GitHub Repository** แล้วตรวจสอบผลการทำงาน
-## บันทึกรูปผลการทำงาน
-```bash
-# บันทึกรูปผลการทำงานที่นี่
-``` 
+**ทำการ push ไปที่ GitHub Repository** แล้วตรวจสอบผลการทำงานี่ 
+
+<img width="1904" height="925" alt="image" src="https://github.com/user-attachments/assets/f6e67827-3016-4477-bee9-c96ee88ccfbe" />
+
+<img width="1919" height="925" alt="image" src="https://github.com/user-attachments/assets/b2746847-4dc8-4726-ac64-c1b997905fb4" />
+
 
 ---
 
