@@ -1768,7 +1768,7 @@ https://flask-todo-app.onrender.com
 
 <img width="1919" height="925" alt="image" src="https://github.com/user-attachments/assets/b2746847-4dc8-4726-ac64-c1b997905fb4" />
 
-
+ผมไม่สามารถทำ GitHub Actions ได้ในช่วง Deploy to Render แต่สามารถทำให้ Render Deploy ได้ ขึ้นว่า Live
 ---
 
 
