@@ -1932,13 +1932,13 @@ curl https://YOUR_RAILWAY_APP_URL/api/health
 
 ก่อน push code และ trigger GitHub Actions ให้ตรวจสอบ:
 
-- [ ] Render Database สร้างเสร็จและสถานะ "Available"
-- [ ] Render Web Service deploy สำเร็จและสถานะ "Live"
-- [ ] Railway Database และ Web Service ทำงานปกติ
-- [ ] สร้าง GitHub Secrets ครบ 5 ตัว
-- [ ] ทดสอบ health endpoints ของทั้ง Render และ Railway ได้
-- [ ] URL ไม่มี `/` ท้าย
-- [ ] DATABASE_URL ใช้ Internal URL (สำหรับ Render)
+- [🗸] Render Database สร้างเสร็จและสถานะ "Available"
+- [🗸] Render Web Service deploy สำเร็จและสถานะ "Live"
+- [✗] Railway Database และ Web Service ทำงานปกติ
+- [🗸] สร้าง GitHub Secrets ครบ 5 ตัว
+- [✗] ทดสอบ health endpoints ของทั้ง Render และ Railway ได้
+- [✗] URL ไม่มี `/` ท้าย
+- [✗] DATABASE_URL ใช้ Internal URL (สำหรับ Render)
 
 ---
 
